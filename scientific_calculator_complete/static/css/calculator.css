@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px;
+}
+
+#keyPad {
+  position: relative;
+  width: 463px;
+  height: 329px;
+  background: #dadada;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  user-select: none;
+}
+
+#helptopDiv {
+  height: 38px;
+  background: #4286f3;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 8px 0 12px;
+  font-size: 16px;
+}
+
+#helptopDiv span {
+  flex: 1;
+  font-weight: 600;
+}
+
+.title-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.help_back,
+.win-btn {
+  width: 48px;
+  height: 22px;
+  border: 0;
+  border-radius: 3px;
+  background: #7fb3ff;
+  color: #fff;
+  font: 700 11px Arial;
+  cursor: pointer;
+}
+
+.win-ctrl {
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: 3px;
+  background: #5b9bff;
+  color: #fff;
+  font: 700 13px Arial;
+  cursor: pointer;
+}
+
+#mainContentArea {
+  padding: 6px 11px 8px;
+}
+
+.keyPad_TextBox1,
+.keyPad_TextBox {
+  width: 434px;
+  height: 30px;
+  border: 1px solid #c8c8c8;
+  background: #fff;
+  font: 20px / 30px Arial;
+  padding: 0 8px;
+  outline: none;
+}
+
+.keyPad_TextBox1 {
+  color: #666;
+  margin-bottom: 3px;
+}
+
+.keyPad_TextBox {
+  text-align: right;
+  font-weight: 500;
+}
+
+.text_container {
+  position: relative;
+  width: 434px;
+}
+
+#memory {
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  font-size: 12px;
+  color: #333;
+  display: none;
+}
+
+#memory.show {
+  display: inline;
+}
+
+.left_sec {
+  margin-top: 6px;
+  display: grid;
+  grid-template-columns: repeat(11, 35px);
+  grid-auto-rows: 25px;
+  gap: 4px 5px;
+  width: 435px;
+}
+
+.left_sec a {
+  width: 35px;
+  height: 25px;
+  background: #f1f1f1;
+  color: #444;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font: 700 12px / 20px Arial;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 0 #fff inset;
+}
+
+.left_sec a:hover {
+  background: #fff;
+}
+
+.left_sec a:active {
+  background: #e4e4e4;
+}
+
+.left_sec a.min {
+  font-size: 10px;
+}
+
+#angleMode {
+  grid-column: span 2;
+  width: 75px !important;
+  font-size: 11px;
+}
+
+.wide {
+  width: 76px !important;
+  grid-column: span 2;
+}
+
+#btnSecond.second-on {
+  background: #cfe2ff;
+  color: #1d4ed8;
+}
+
+#keyPad_btnAllClr {
+  background: #e74c3c;
+  color: #fff;
+  border-color: #c0392b;
+}
+
+.left_sec a#keyPad_btnEnter {
+  grid-area: 5 / 11 / 7 / 12;
+  width: 35px;
+  height: 54px !important;
+  display: flex;
+  background: #2ecc71;
+  color: #fff;
+  border-color: #27ae60;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 38px;
+  bottom: 0;
+  background: #f7f7f7;
+  overflow: auto;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #333;
+}
+
+.overlay.show {
+  display: block;
+}
+
+.overlay h3 {
+  margin: 8px 0 6px;
+  font-size: 14px;
+}
+
+.overlay ul {
+  margin: 0 0 8px 18px;
+  padding: 0;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border-bottom: 1px solid #ddd;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.history-item .expr {
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-item .res {
+  font-weight: 700;
+}
+
+.overlay-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.overlay-actions button {
+  height: 22px;
+  border: 0;
+  border-radius: 3px;
+  background: #4286f3;
+  color: #fff;
+  font: 700 11px Arial;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+#keyPad.minimized {
+  height: 38px;
+}
+
+#keyPad.minimized #mainContentArea,
+#keyPad.minimized .overlay {
+  display: none;
+}
+
+sup,
+sub {
+  font-size: 9px;
+  line-height: 0;
+}

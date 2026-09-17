@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCIENTIFIC CALCULATOR</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/calculator.css') }}?v=2">
+</head>
+<body>
+  <div id="keyPad">
+    <div id="helptopDiv">
+      <span>Scientific Calculator</span>
+      <div class="title-actions">
+        <button type="button" class="help_back" id="keyPad_Help">Help</button>
+        <button type="button" class="win-ctrl" id="calc_min" title="Minimize">–</button>
+        <button type="button" class="win-ctrl close" id="closeButton" title="Close">×</button>
+      </div>
+    </div>
+
+    <div id="mainContentArea">
+      <input type="text" id="keyPad_UserInput1" class="keyPad_TextBox1" readonly value="">
+      <div class="text_container">
+        <input type="text" id="keyPad_UserInput" class="keyPad_TextBox" maxlength="40" readonly value="0">
+        <span id="memory">M</span>
+      </div>
+
+      <div class="left_sec">
+          <a href="#nogo" id="keyPad_btnMod" data-op="mod">mod</a>
+          <a href="#nogo" id="angleMode" data-mode="deg" title="Click to cycle Deg / Rad / Grad">Deg</a>
+          <a href="#nogo" id="btnSecond" title="2nd functions">2nd</a>
+          <a href="#nogo" id="btnAns" title="Last answer">Ans</a>
+          <a href="#nogo" id="btnHist" title="History">Hist</a>
+          <a href="#nogo" id="keyPad_MC">MC</a>
+          <a href="#nogo" id="keyPad_MR">MR</a>
+          <a href="#nogo" id="keyPad_MS">MS</a>
+          <a href="#nogo" id="keyPad_M+">M+</a>
+          <a href="#nogo" id="keyPad_M-">M-</a>
+          <a href="#nogo" class="min" data-unary="sinh" data-unary2="csch">sinh</a>
+          <a href="#nogo" class="min" data-unary="cosh" data-unary2="sech">cosh</a>
+          <a href="#nogo" class="min" data-unary="tanh" data-unary2="coth">tanh</a>
+          <a href="#nogo" id="keyPad_EXP" data-binary="exp10">Exp</a>
+          <a href="#nogo" data-char="(">(</a>
+          <a href="#nogo" data-char=")">)</a>
+          <a href="#nogo" class="wide" id="keyPad_btnBack">←</a>
+          <a href="#nogo" id="keyPad_btnAllClr">C</a>
+          <a href="#nogo" data-unary="neg">+/-</a>
+          <a href="#nogo" data-unary="sqrt" data-unary2="square">√</a>
+          <a href="#nogo" class="min" data-unary="asinh">sinh<sup>-1</sup></a>
+          <a href="#nogo" class="min" data-unary="acosh">cosh<sup>-1</sup></a>
+          <a href="#nogo" class="min" data-unary="atanh">tanh<sup>-1</sup></a>
+          <a href="#nogo" data-unary="log2">log<sub>2</sub>x</a>
+          <a href="#nogo" data-unary="ln">ln</a>
+          <a href="#nogo" data-unary="log">log</a>
+          <a href="#nogo" data-num="7">7</a>
+          <a href="#nogo" data-num="8">8</a>
+          <a href="#nogo" data-num="9">9</a>
+          <a href="#nogo" data-binary="div">/</a>
+          <a href="#nogo" data-unary="percent" data-unary2="round">%</a>
+          <a href="#nogo" data-const="pi">π</a>
+          <a href="#nogo" data-const="e">e</a>
+          <a href="#nogo" data-unary="fact" data-binary2="npr">n!</a>
+          <a href="#nogo" data-binary="logy" data-binary2="ncr">log<sub>y</sub>x</a>
+          <a href="#nogo" data-unary="exp" data-unary2="twox">e<sup>x</sup></a>
+          <a href="#nogo" data-unary="tenx">10<sup>x</sup></a>
+          <a href="#nogo" data-num="4">4</a>
+          <a href="#nogo" data-num="5">5</a>
+          <a href="#nogo" data-num="6">6</a>
+          <a href="#nogo" data-binary="mul">*</a>
+          <a href="#nogo" data-unary="inv" data-unary2="rand">1/x</a>
+
+        <a href="#nogo" class="min" data-unary="sin">sin</a>
+        <a href="#nogo" class="min" data-unary="cos">cos</a>
+        <a href="#nogo" class="min" data-unary="tan">tan</a>
+        <a href="#nogo" data-binary="pow">x<sup>y</sup></a>
+        <a href="#nogo" data-unary="cube">x<sup>3</sup></a>
+        <a href="#nogo" data-unary="square">x<sup>2</sup></a>
+        <a href="#nogo" data-num="1">1</a>
+        <a href="#nogo" data-num="2">2</a>
+        <a href="#nogo" data-num="3">3</a>
+        <a href="#nogo" data-binary="sub">-</a>
+        <a href="#nogo" id="keyPad_btnEnter" style="grid-column:11;grid-row:5 / span 2;height:54px">=</a>
+        <a href="#nogo" class="min" data-unary="asin">sin<sup>-1</sup></a>
+        <a href="#nogo" class="min" data-unary="acos">cos<sup>-1</sup></a>
+        <a href="#nogo" class="min" data-unary="atan">tan<sup>-1</sup></a>
+        <a href="#nogo" data-binary="yroot">ʸ√x</a>
+        <a href="#nogo" data-unary="cbrt" data-unary2="ceil">∛</a>
+        <a href="#nogo" data-unary="abs" data-unary2="floor">|x|</a>
+        <a href="#nogo" class="wide" data-num="0">0</a>
+        <a href="#nogo" data-dot="1">.</a>
+        <a href="#nogo" data-binary="add">+</a>
+      </div>
+    </div>
+
+    <div class="overlay" id="helpOverlay">
+      <h3>Calculator Instructions</h3>
+      <p>Same size as TCS iON scientific calculator, with extra features: keyboard, history, Ans, 2nd functions, Grad via 2nd+Deg, copy, and high-precision Flask evaluation.</p>
+      <h3>Do's</h3>
+      <ul>
+        <li>Press C to begin a new calculation.</li>
+        <li>Use parentheses and operators to build an equation.</li>
+        <li>Use π, e, log, Exp and memory keys for faster work.</li>
+        <li>Click Deg to cycle Deg → Rad → Grad before trigonometry.</li>
+        <li>Use 2nd for extra functions (nPr, nCr, floor, ceil, 2<sup>x</sup>, rand).</li>
+      </ul>
+      <h3>New shortcuts</h3>
+      <ul>
+        <li>Keyboard digits and + - * / Enter Backspace Esc.</li>
+        <li>Hist stores results on the Flask server session.</li>
+        <li>Ans inserts the last result. Ctrl+C copies the display.</li>
+      </ul>
+    </div>
+
+    <div class="overlay" id="histOverlay">
+      <div class="overlay-actions">
+        <button type="button" id="copyResult">Copy result</button>
+        <button type="button" id="clearHistory">Clear history</button>
+        <button type="button" id="closeHist">Back</button>
+      </div>
+      <div id="historyList"></div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/calculator.js') }}?v=2"></script>
+</body>
+</html>
